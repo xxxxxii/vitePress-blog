@@ -46,13 +46,15 @@
 }
 
 /*  */
-
-.VPNav {
-  /* display: none; */
-}
 html,
 body {
   overflow: hidden;
+}
+@media (min-width: 960px) {
+  .VPNav {
+    position: static !important;
+    display: none;
+  }
 }
 
 @media (min-width: 960px) {

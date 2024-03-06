@@ -80,8 +80,8 @@ import { useData, withBase } from "vitepress";
 
 
 import { nav } from "../../menu";
-import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNavBarSearch.vue'
-import VPSwitchAppearance from 'vitepress/dist/client/theme-default/components/VPSwitchAppearance.vue'
+import VPNavBarSearch from './VPNavBarSearch.vue'
+import VPSwitchAppearance from './VPSwitchAppearance.vue'
 // let gTheme = localStorage.getItem("vitepress-theme-appearance");
 // let htmlDom = document.querySelector("html");
 
