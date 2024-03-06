@@ -13,15 +13,12 @@
       Previous page
     </button>
     <div v-if="pagesNum > 1">{{ `${pageCurrent}/${pagesNum}` }}</div>
-    <button
-      class="right"
-      v-if="pageCurrent < pagesNum"
-      @click="go(pageCurrent + 1)"
-    >
+    <button class="right" v-if="pageCurrent < pagesNum" @click="go(pageCurrent + 1)">
       Next page
     </button>
   </div>
 </template>
+
 <script lang="ts" setup>
 import { ref } from "vue";
 import ShareCard from "./ShareCard.vue";
@@ -139,6 +136,7 @@ const transDate = (date: string) => {
   font-size: 2rem;
   margin-top: 24px;
 }
+
 .blogList {
   padding: 30px 0;
   padding-bottom: 30px;
@@ -147,6 +145,7 @@ const transDate = (date: string) => {
   justify-content: center;
   align-items: center;
 }
+
 .blog {
   width: 85%;
   display: block;
@@ -159,19 +158,23 @@ const transDate = (date: string) => {
   border: 4px solid #3f4e4f;
   cursor: pointer;
 }
+
 .blog:hover {
   text-decoration: none;
   transform: translate(-2px, -2px);
   box-shadow: 10px 10px var(--vp-c-brand);
 }
+
 .title {
   color: var(--vp-c-brand-light);
   font-size: 1.2em;
   font-weight: bold;
 }
+
 .date {
   padding-bottom: 7px;
 }
+
 .pagination {
   display: flex;
   align-items: center;
@@ -203,6 +206,7 @@ button::after {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
+
 button:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
@@ -212,6 +216,7 @@ button:hover::after {
   position: absolute;
   left: 0;
 }
+
 .right {
   position: absolute;
   right: 0;

@@ -36,7 +36,15 @@ async function config() {
         "meta",
         {
           property: "og:description",
-          content: "Home of Clark Cui",
+          content: "Home of yulinZ",
+        },
+      ],
+      // 解决gitee 图床防盗策略
+      [
+        "meta",
+        {
+          name: 'referrer',
+          content: "no-referrer",
         },
       ],
     ],
@@ -52,7 +60,7 @@ async function config() {
       docsDir: "/",
       // docsBranch: "master",
       posts: await getPosts(),
-      pageSize: 5,
+      pageSize: 10,
       postLength: await getPostLength(),
       nav: nav,
       socialLinks: [
