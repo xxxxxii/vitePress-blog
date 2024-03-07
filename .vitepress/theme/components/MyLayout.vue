@@ -1,12 +1,13 @@
 <template>
   <div class="main-body">
     <Header />
-    <div class="layout">
+    <div class="layout" id="layout-content">
       <Layout>
         <template #doc-before>
           <Title />
           <Category />
         </template>
+
         <template #doc-after>
           <div>
             <button @click="back">cd ··</button>
@@ -14,14 +15,21 @@
           <Comments />
         </template>
         <!-- Home slot-->
-        <template #home-hero-before> <HomeHero /> </template>
-        <template #home-features-after> <Page /></template>
+
+        <template #home-hero-before>
+          <HomeHero />
+        </template>
+
+        <template #home-features-after>
+          <Page />
+        </template>
       </Layout>
       <CopyWright />
     </div>
     <!-- copywright -->
   </div>
 </template>
+
 <script lang="ts" setup>
 import DefaultTheme from "vitepress/theme";
 import Header from "./Header.vue";
@@ -39,6 +47,7 @@ const back = () => {
   history.back();
 };
 </script>
+
 <style scoped>
 button {
   display: inline-block;
@@ -61,6 +70,7 @@ button::after {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
+
 button:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
@@ -69,10 +79,12 @@ button:hover::after {
 .main-body {
   display: flex;
 }
+
 header {
   flex: none;
   width: 200px;
 }
+
 .layout {
   flex: 1;
   overflow-y: auto;

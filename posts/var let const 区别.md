@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: ES6 var let const 区别
 postSlug: ES6 var let const 区别
 featured: false

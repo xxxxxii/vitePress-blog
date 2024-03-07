@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: vue3 + vite npm 组件库开发(三)
 postSlug: vue3 + vite npm 组件库开发(三)
 featured: true

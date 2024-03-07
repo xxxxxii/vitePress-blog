@@ -69,9 +69,9 @@ sudo systemctl status nginx //检查其运行状态
 
 解决问题:按照官网示例，但是有几点不同
 
-1.  先升级 epel,`sudo dnf upgrade` ，然后发现 700 多 M，没事，忍着头皮升，再次输入，并加上 `--allowerasing`
-2.  把`sudo yum install snapd`换成`sudo dnf install snapd `
-3.  在 create a symbolic link 之后，如果`sudo snap install core; sudo snap refresh core`报错`error: too early for operation, device not yet seeded or device model not acknowledged`，就输入命令`sudo dnf reinstall snapd`重装一下
+1. 先升级 epel,`sudo dnf upgrade` ，然后发现 700 多 M，没事，忍着头皮升，再次输入，并加上 `--allowerasing`
+2. 把`sudo yum install snapd`换成`sudo dnf install snapd`
+3. 在 create a symbolic link 之后，如果`sudo snap install core; sudo snap refresh core`报错`error: too early for operation, device not yet seeded or device model not acknowledged`，就输入命令`sudo dnf reinstall snapd`重装一下
 
 然后按照官网的示例接着装
 

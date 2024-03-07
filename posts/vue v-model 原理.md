@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: vue v-model 原理
 postSlug: vue v-model 原理
 featured: true
@@ -58,7 +58,7 @@ v-model 其实是 vue 语法的一个语法糖
 
 ## 底层实现其实是基于 vue 的核心数据响应式
 
-下面简单的实现一下，使用` Object.defineProperty`
+下面简单的实现一下，使用`Object.defineProperty`
 
 ```html
 <!DOCTYPE html>

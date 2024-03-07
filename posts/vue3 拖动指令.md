@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: vue3 拖动指令
 postSlug: vue3 拖动指令
 featured: true

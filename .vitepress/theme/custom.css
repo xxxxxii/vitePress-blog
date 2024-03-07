@@ -50,13 +50,30 @@ html,
 body {
   overflow: hidden;
 }
+.VPDoc{
+  width: calc(100% - 350px);
+}
+@media (max-width: 1280px){
+  .VPDoc{
+    width: 100%;
+  }
+}
+@media (min-width: 960px){
+.VPDoc .content {
+   max-width: 100% !important;
+}
+}
 @media (min-width: 960px) {
   .VPNav {
     position: static !important;
     display: none;
   }
 }
-
+@media (min-width: 1280px){
+  .VPDoc{
+    max-width: calc(100% - 350px);
+  }
+}
 @media (min-width: 960px) {
   .VPLocalNav {
     top: 0 !important;

@@ -48,7 +48,7 @@ export function useYearSort(post: Post[]) {
 }
 
 export function getHeaders(range: any) {
-  const headers = [...document.querySelectorAll(".VPDoc h2,h3,h4,h5,h6")]
+  const headers = [...document.querySelectorAll(".VPDoc h1,h2,h3,h4,h5,h6")]
     .filter((el) => el.id && el.hasChildNodes())
     .map((el) => {
       const level = Number(el.tagName[1]);
@@ -59,7 +59,7 @@ export function getHeaders(range: any) {
       };
     });
 
-  // return resolveHeaders(headers, range);
+  //return resolveHeaders(headers, range);
   return headers;
 }
 
@@ -99,8 +99,8 @@ export function resolveHeaders(headers: any, range?: any): any {
     typeof levelsRange === "number"
       ? [levelsRange, levelsRange]
       : levelsRange === "deep"
-      ? [2, 6]
-      : levelsRange;
+        ? [2, 6]
+        : levelsRange;
 
   console.log(high, low, "loooww");
   headers = headers.filter((h) => h.level >= high && h.level <= low);

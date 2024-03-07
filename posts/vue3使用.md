@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: vue3 基础使用
 postSlug: vue3 基础使用
 featured: false
@@ -17,7 +17,7 @@ description: vue3 基础使用
 
 # 创建项目
 
-` npm init vite 项目名称`
+`npm init vite 项目名称`
 
 # 使用 router
 
@@ -78,7 +78,7 @@ async function bootstrap() {
 void bootstrap();
 ```
 
-App.vue 添加` <router-view />`
+App.vue 添加`<router-view />`
 
 # 使用 axios
 
@@ -90,7 +90,7 @@ App.vue 添加` <router-view />`
 
 # pinia
 
-`pnpm install pinia  `
+`pnpm install pinia`
 
 pinia 持久化插件
 

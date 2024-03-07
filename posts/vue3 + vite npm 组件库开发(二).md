@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: vue3 + vite npm 组件库开发(二)
 postSlug: vue3 + vite npm 组件库开发(二)
 featured: true
@@ -45,7 +45,7 @@ export default defineConfig({
 });
 ```
 
-## md 文件作为组件去路由，例如：
+## md 文件作为组件去路由，例如
 
 ```typescript
 import { App } from "vue";

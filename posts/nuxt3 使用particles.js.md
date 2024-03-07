@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: nuxt3 使用particles.js
 postSlug: nuxt3 使用particles.js
 featured: false

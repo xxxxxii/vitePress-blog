@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: 为组件生成唯一的id
 postSlug: 为组件生成唯一的id
 featured: false
@@ -14,7 +14,7 @@ description: 为组件生成唯一的id,uuid
 
 # vue 组件生成唯一的 uuid
 
-今天在开发组件时因为使用`<input id="id" type="checkbox" />`和` <label for="id">` 绑定 id，组件复用时 id 不唯一产生的 bug，如下图：
+今天在开发组件时因为使用`<input id="id" type="checkbox" />`和`<label for="id">` 绑定 id，组件复用时 id 不唯一产生的 bug，如下图：
 
 ![image-20230328151117111](https://gitee.com/yulinzhu/pic-window/raw/master/image-20230328151117111.png)
 

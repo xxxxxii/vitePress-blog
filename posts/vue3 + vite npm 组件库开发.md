@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: vue3 + vite npm 组件库开发(一)
 postSlug: vue3 + vite npm 组件库开发(一)
 featured: true
@@ -141,7 +141,7 @@ description: vue3 + vite npm 组件库开发(一)
 
 ## 首先你得有 npm 账号
 
-首先要在 npm 官网注册自己的 npm 账户，链接：https://www.npmjs.com/
+首先要在 npm 官网注册自己的 npm 账户，链接：<https://www.npmjs.com/>
 
 ## 查询是否存在包名
 
@@ -155,9 +155,9 @@ description: vue3 + vite npm 组件库开发(一)
 
 （1）查看当前源：npm config get registry
 
-（2）切换为 npm 源：npm config set registry https://registry.npmjs.org
+（2）切换为 npm 源：npm config set registry <https://registry.npmjs.org>
 
-（3）切换为淘宝镜像：npm config set registry=https://registry.npm.taobao.org/
+（3）切换为淘宝镜像：npm config set registry=<https://registry.npm.taobao.org/>
 
 ## 添加自己的账户
 

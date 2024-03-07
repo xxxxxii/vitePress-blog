@@ -1,11 +1,20 @@
 <template>
+
   <FireWorksAnimation />
   <ShareCard />
   <h1 class="blog-title">Blogs</h1>
   <div class="blogList">
     <a class="blog" v-for="item in posts" :href="withBase(item.regularPath)">
       <div class="title">{{ item.frontMatter.title }}</div>
-      <div class="date">{{ transDate(item.frontMatter.date) }}</div>
+      <div class="description" v-if="item.frontMatter.description">{{ item.frontMatter.description }}</div>
+      <div class="date">
+        🕔 {{ (item.frontMatter.date) }}
+        <span v-if="item.frontMatter.tags.length > 0">
+          🏷️ <span v-for="ic in item.frontMatter.tags" :key="ic">
+            {{ ic }}&nbsp;
+          </span>
+        </span>
+      </div>
     </a>
   </div>
   <div class="pagination">
@@ -17,6 +26,7 @@
       Next page
     </button>
   </div>
+
 </template>
 
 <script lang="ts" setup>
@@ -43,8 +53,9 @@ let pagesNum =
     ? postLength / pageSize
     : postLength / pageSize + 1;
 pagesNum = parseInt(pagesNum.toString());
-//pageCurrent
-let pageCurrent = ref(1);
+//pageCurrent // 保存页码
+let pageCurrent = ref(Number(sessionStorage.getItem('page')) || ((sessionStorage.setItem('page', 1)), 1));
+
 // filter index post
 postsAll = postsAll.filter((item: post) => {
   return item.regularPath.indexOf("index") < 0;
@@ -68,6 +79,7 @@ posts.value = allMap[pageCurrent.value - 1];
 // click pagination
 const go = (i) => {
   pageCurrent.value = i;
+  sessionStorage.setItem('page', pageCurrent.value)
   posts.value = allMap[pageCurrent.value - 1];
 };
 // timestamp transform
@@ -147,13 +159,13 @@ const transDate = (date: string) => {
 }
 
 .blog {
-  width: 85%;
+  width: 95%;
   display: block;
   border-radius: 10px;
   padding: 0 20px;
   margin: 10px;
   background: var(--vp-c-bg);
-  max-width: 600px;
+  /* max-width: 600px; */
   box-shadow: 6px 6px var(--vp-c-brand);
   border: 4px solid #3f4e4f;
   cursor: pointer;
@@ -180,7 +192,7 @@ const transDate = (date: string) => {
   align-items: center;
   justify-content: center;
   width: 85%;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
   position: relative;
 }

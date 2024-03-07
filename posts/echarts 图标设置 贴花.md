@@ -1,6 +1,6 @@
 ---
 author: yulinZ
-pubDatetime: 2023-09-05
+date: 2023-09-05
 title: echarts 中图表设置贴花
 postSlug: echarts 中图表设置贴花
 featured: false

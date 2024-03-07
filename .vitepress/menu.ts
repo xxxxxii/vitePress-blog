@@ -11,8 +11,8 @@ export const nav = [
         text: "📃Archives",
         link: "/archives",
     },
-    {
-        text: "🔥RSS",
-        link: "https://clark-cui.top/feed.xml",
-    },
+    // {
+    //     text: "🔥RSS",
+    //     link: "https://clark-cui.top/feed.xml",
+    // },
 ]
