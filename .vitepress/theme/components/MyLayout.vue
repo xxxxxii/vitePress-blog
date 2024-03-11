@@ -2,10 +2,13 @@
   <div class="main-body">
     <Header />
     <div class="layout" id="layout-content">
+
       <Layout>
+
         <template #doc-before>
           <Title />
           <Category />
+
         </template>
 
         <template #doc-after>
@@ -46,6 +49,9 @@ const { Layout } = DefaultTheme;
 const back = () => {
   history.back();
 };
+
+
+
 </script>
 
 <style scoped>
