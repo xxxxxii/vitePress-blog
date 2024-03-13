@@ -144,7 +144,8 @@ window.addEventListener('click',function(){
 
 <style scoped>
 header {
-    border-right: 1px solid var(--vp-code-block-divider-color);
+    z-index: 9999;
+    width: 100%;
 }
 
 .logo {
@@ -192,7 +193,7 @@ dialog {
     border-radius: 8px;
     top: 40%;
     max-width: 640px;
-    z-index: 999;
+    z-index: 9999;
 }
 
 @media (min-width: 960px) {

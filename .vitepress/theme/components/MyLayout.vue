@@ -1,6 +1,9 @@
 <template>
   <div class="main-body">
-    <Header />
+    <div class="header">
+      <Header />
+    </div>
+
     <div class="layout" id="layout-content">
 
       <Layout>
@@ -86,15 +89,32 @@ button:hover::after {
   display: flex;
 }
 
-header {
+.header {
   flex: none;
-  width: 200px;
+  width: 160px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border-right: 1px solid var(--vp-code-block-divider-color);
+  z-index: 999;
 }
 
 .layout {
   flex: 1;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   height: 100vh;
+  margin-left: 160px;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    margin-left: 0;
+    overflow-y: auto;
+  }
+
+  .header {
+    display: none;
+  }
 }
 </style>
-import HeaderVue from "./Header.vue";

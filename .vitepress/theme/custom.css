@@ -48,7 +48,10 @@
 /*  */
 html,
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* display: flex;
+  flex-direction: column;
+  width: 100vw; */
 }
 .VPDoc{
   width: calc(100% - 350px);

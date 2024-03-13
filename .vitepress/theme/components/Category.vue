@@ -1,56 +1,79 @@
 <template>
-  <div class="category" v-if="headers.length > 0">
-    <ul class="list">
-      <!-- <li class="header" v-for="item in headers">
-        <a :href="item.link" class="header-h2" v-if="item.level === 2">{{
-    item.title
-  }}</a>
-        <ul v-if="item.level === 3">
-          <li class="header">
-            <a :href="item.link" :class="['header-h3', { showIndent: showIndent }]">{{ item.title }}</a>
-          </li>
-        </ul>
-      </li> -->
-      <li v-for="item, index in headers" @click="scrollTo($event, index, item)">
-        <span style="width:6px;height:6px;border-radius: 50%;display: inline-block;"
-          :style="{ 'background': curIndex === index ? 'var(--vp-c-color-c)' : 'transparent' }"></span>
-
-        <a :href="item.link" :style="{ 'margin-left': 8 * item.level + 'px' }">
-          {{ item?.title }}
-        </a>
-      </li>
-    </ul>
+  <div class="category" id="catelogList">
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useData, onContentUpdated } from "vitepress";
-import { shallowRef, ref } from "vue";
+import { shallowRef, ref, onMounted } from "vue";
 import { getHeaders } from "../utils";
+import katelog from 'katelog';
 
 const { frontmatter, theme } = useData();
-const headers = shallowRef<any>([]);
+// const headers = shallowRef<any>([]);
 const curIndex = ref(0);
 
-
-onContentUpdated(() => {
-  headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
-  console.log(headers.value)
-
-  // showIndent.value = headers.value.some((header) => {
-  //   return header.level === 2;
-  // });
-});
-function scrollTo(e, index, item) {
-  curIndex.value = index
-
-  let dom = document.querySelector(item?.link);
-  document.querySelector('#layout-content').scroll({
-    top: dom.offsetTop,
-    behavior: 'smooth'
+onMounted(() => {
+  let katelogIns = new katelog({
+    contentEl: 'VPContent',
+    catelogEl: 'catelogList',
+    linkClass: 'k-catelog-link',
+    linkActiveClass: 'k-catelog-link-active',
+    supplyTop: 20,
+    selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    active: function (el) {
+      console.log(el);
+    }
   });
-}
+  katelogIns.rebuild();
+})
+// onContentUpdated(() => {
+//   headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
+//   console.log(headers.value)
+
+//   // showIndent.value = headers.value.some((header) => {
+//   //   return header.level === 2;
+//   // });
+// });
+// function scrollTo(e, index, item) {
+//   curIndex.value = index
+
+//   let dom = document.querySelector(item?.link);
+//   document.querySelector('#layout-content').scroll({
+//     top: dom.offsetTop,
+//     behavior: 'smooth'
+//   });
+// }
 </script>
+
+<style>
+.k-catelog-link {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.k-catelog-link::before {
+  transition: all 0.5s;
+}
+
+.k-catelog-link-active {
+  color: #1e80ff;
+}
+
+.k-catelog-link-active::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -10px;
+  width: 3px;
+  height: 14px;
+  background: #1e80ff;
+  border-radius: 2px;
+}
+</style>
 
 <style scoped>
 .category {
