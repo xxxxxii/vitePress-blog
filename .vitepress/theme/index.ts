@@ -6,14 +6,19 @@ import TwoSlashFloatingVue from "vitepress-plugin-twoslash/client";
 import "vitepress-plugin-twoslash/style.css";
 
 import "./custom.css";
+import type { Theme } from "vitepress";
 
 export default {
   extends: Theme,
   Layout: MyLayout,
-  enhanceApp({ app }) {
+  async enhanceApp({ app }) {
+    if (!import.meta.env.SSR) {
+      const plugin = await import("katelog");
+      app.use(plugin.default);
+    }
     // register global components
     app.component("Archives", Archives);
     app.component("Tags", Tags);
     app.use(TwoSlashFloatingVue);
   },
-};
+} satisfies Theme;

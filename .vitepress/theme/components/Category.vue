@@ -21,9 +21,9 @@ onMounted(() => {
     linkActiveClass: 'k-catelog-link-active',
     supplyTop: 20,
     selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-    active: function (el) {
-      console.log(el);
-    }
+    // active: function (el) {
+    //   console.log(el);
+    // }
   });
   katelogIns.rebuild();
 })

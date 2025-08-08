@@ -2,20 +2,20 @@
   "name": "viteDoc",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "clark-cui <cuirongchuan@163.com>",
+  "author": "yulinZ",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "dayjs": "^1.11.10",
-    "fast-glob": "^3.3.2",
+    "dayjs": "^1.11.13",
+    "fast-glob": "^3.3.3",
     "feed": "^4.2.2",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.1",
     "globby": "14.0.0",
     "gray-matter": "^4.0.3",
-    "markdown-it": "^14.0.0",
+    "markdown-it": "^14.1.0",
     "markdown-it-mathjax3": "^4.3.2",
     "vitepress": "1.0.0-rc.40",
-    "vitepress-plugin-twoslash": "^0.10.0"
+    "vitepress-plugin-twoslash": "^0.10.2"
   },
   "scripts": {
     "dev": "vitepress dev ",
@@ -23,10 +23,10 @@
     "serve": "vitepress serve "
   },
   "dependencies": {
-    "@docsearch/css": "^3.5.2",
-    "@docsearch/js": "^3.5.2",
-    "@vueuse/core": "^10.7.2",
-    "@vueuse/integrations": "^10.7.2",
+    "@docsearch/css": "^3.9.0",
+    "@docsearch/js": "^3.9.0",
+    "@vueuse/core": "^10.11.1",
+    "@vueuse/integrations": "^10.11.1",
     "gitalk": "^1.8.0",
     "katelog": "^0.0.6",
     "mark.js": "8.11.1",

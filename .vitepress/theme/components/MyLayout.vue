@@ -10,7 +10,9 @@
 
         <template #doc-before>
           <Title />
-          <Category />
+          <ClientOnly>
+            <Category />
+          </ClientOnly>
 
         </template>
 
@@ -20,7 +22,7 @@
           </div>
           <Comments />
         </template>
-        <!-- Home slot-->
+        <!-- Home slot -->
 
         <template #home-hero-before>
           <HomeHero />
