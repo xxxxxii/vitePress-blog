@@ -21,7 +21,7 @@
   --vp-avator-border: #ffffff;
 }
 .dark {
-  --vp-c-bg: #2c3639;
+  --vp-c-bg: #0f0f0f;
   --vp-c-text: white;
   --vp-c-hover: #ffffff;
   --vp-c-bg-alpha-with-backdrop: rgba(44, 54, 57, 0.7);

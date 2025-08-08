@@ -51,7 +51,7 @@ const getFontSize = (length: number) => {
 .main {
   margin: 0 auto;
   padding: 0.5rem 1.5rem 4rem;
-  max-width: 48rem;
+  max-width: 52rem;
 }
 
 .tags-header {

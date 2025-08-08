@@ -4,11 +4,11 @@
             <div class="logo-icon" style="display: flex;align-items: end;">
                 <!-- <img src="../../../public/horse.png" style="width: 50px;" /> -->
                 <div
-                    style="display: flex;margin-bottom: 2px;align-items: center;justify-content: center;width: 22px;height: 22px;border-radius: 4px; background:var(--vp-c-important-1); color: beige;">
-                    Hi
+                    style="display: flex;margin-bottom: 2px;align-items: center;justify-content: center;border-radius: 4px;padding:2px 6px; background:var(--vp-c-important-1); color: beige;">
+                    灰鲸
                 </div>
                 <div style="margin:0 0 0 10px;">
-                    {{ site.title }}
+                    <!-- {{ site.title }} -->
                 </div>
             </div>
 
@@ -29,30 +29,27 @@
         </div>
         <VPNavBarSearch style="padding: 0 6px;" />
         <ul style="margin-bottom: 5px;">
-            <li v-for="item in theme.nav" :key="item.link">
+            <li v-for="item in theme.nav" :key="item.link" style="padding: 6px 10px;">
                 <a :href="item.link">{{ item.text }}</a>
             </li>
-            <li style="display: flex;">
+            <li style="display: flex;padding: 6px 10px;">
                 <a v-for="item in theme.socialLinks" :key="item.link" :href="item.link" v-html="item.icon.svg">
                 </a>
             </li>
 
-            <!-- <li>
-                <a href="#">
-                    <VPSwitchAppearance />
-                </a>
-            </li> -->
+
         </ul>
 
         <div style="width: 100%; color: var(--vp-c-text-1); position: absolute; bottom: 5px;">
-            <button style="padding: 8px;" @click="showToolsBox($event)">
+            <!-- <button style="padding: 8px;" @click="showToolsBox($event)">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="var(--vp-c-text-1)" width="16"
                     height="16">
                     <path
                         d="M1.5 3.25c0-.966.784-1.75 1.75-1.75h2.5c.966 0 1.75.784 1.75 1.75v2.5A1.75 1.75 0 0 1 5.75 7.5h-2.5A1.75 1.75 0 0 1 1.5 5.75Zm7 0c0-.966.784-1.75 1.75-1.75h2.5c.966 0 1.75.784 1.75 1.75v2.5a1.75 1.75 0 0 1-1.75 1.75h-2.5A1.75 1.75 0 0 1 8.5 5.75Zm-7 7c0-.966.784-1.75 1.75-1.75h2.5c.966 0 1.75.784 1.75 1.75v2.5a1.75 1.75 0 0 1-1.75 1.75h-2.5a1.75 1.75 0 0 1-1.75-1.75Zm7 0c0-.966.784-1.75 1.75-1.75h2.5c.966 0 1.75.784 1.75 1.75v2.5a1.75 1.75 0 0 1-1.75 1.75h-2.5a1.75 1.75 0 0 1-1.75-1.75ZM3.25 3a.25.25 0 0 0-.25.25v2.5c0 .138.112.25.25.25h2.5A.25.25 0 0 0 6 5.75v-2.5A.25.25 0 0 0 5.75 3Zm7 0a.25.25 0 0 0-.25.25v2.5c0 .138.112.25.25.25h2.5a.25.25 0 0 0 .25-.25v-2.5a.25.25 0 0 0-.25-.25Zm-7 7a.25.25 0 0 0-.25.25v2.5c0 .138.112.25.25.25h2.5a.25.25 0 0 0 .25-.25v-2.5a.25.25 0 0 0-.25-.25Zm7 0a.25.25 0 0 0-.25.25v2.5c0 .138.112.25.25.25h2.5a.25.25 0 0 0 .25-.25v-2.5a.25.25 0 0 0-.25-.25Z">
                     </path>
                 </svg>
-            </button>
+            </button> -->
+            <VPSwitchAppearance />
         </div>
     </header>
 
@@ -66,7 +63,7 @@
                 <!-- <video></video> -->
             </div>
             <div class="item-p" style="width: 100%;">
-                <VPSwitchAppearance />
+
                 <div>
                     <span v-if="user">当前系统环境: {{ user?.system + ' ' + user?.browser }}</span>
                 </div>
@@ -78,66 +75,66 @@
 
 <script setup>
 import { useData, withBase } from "vitepress";
-import {ref} from "vue"
+import { ref } from "vue"
 
 // import { nav } from "../../menu";
 import VPNavBarSearch from './VPNavBarSearch.vue'
 import VPSwitchAppearance from './VPSwitchAppearance.vue'
 
-const { theme ,site } = useData();
+const { theme, site } = useData();
 
-let tools= ref({
-    show:false,
-    musicUrl:null
+let tools = ref({
+    show: false,
+    musicUrl: null
 })
 let user = ref({
-    sys:{}
+    sys: {}
 })
 
-function showToolsBox(e){
-    tools.value.show = !tools.value.show 
+function showToolsBox(e) {
+    tools.value.show = !tools.value.show
     e.stopPropagation()
 }
 
 function getMusic() {
-  fetch('https://api.qqsuu.cn/api/dm-randmusic?sort=%E7%83%AD%E6%AD%8C%E6%A6%9C&format=json').then((response) => {
-    // 判断响应状态为200表示请求成功
-    if (response.ok) {
-      return response.json(); // 将响应转换为JSON格式
-    } else {
-      throw new Error('Network response was not ok'); // 若不是200则抛出错误
-    }
-  })
-    .then((data) => {
-      tools.value.musicUrl = data.data.url
+    fetch('https://api.qqsuu.cn/api/dm-randmusic?sort=%E7%83%AD%E6%AD%8C%E6%A6%9C&format=json').then((response) => {
+        // 判断响应状态为200表示请求成功
+        if (response.ok) {
+            return response.json(); // 将响应转换为JSON格式
+        } else {
+            throw new Error('Network response was not ok'); // 若不是200则抛出错误
+        }
     })
-    .catch((error) => {
-      console.error('Error:', error); // 输出错误信息
-    });
+        .then((data) => {
+            tools.value.musicUrl = data.data.url
+        })
+        .catch((error) => {
+            console.error('Error:', error); // 输出错误信息
+        });
 }
 
-function getUserSys(){
+function getUserSys() {
     fetch('https://api.qqsuu.cn/api/dm-visitor').then((response) => {
-    // 判断响应状态为200表示请求成功
-    if (response.ok) {
-      return response.json(); // 将响应转换为JSON格式
-    } else {
-      throw new Error('Network response was not ok'); // 若不是200则抛出错误
-    }
-  })
-    .then((data) => {
-      user.value = data
+        // 判断响应状态为200表示请求成功
+        if (response.ok) {
+            return response.json(); // 将响应转换为JSON格式
+        } else {
+            throw new Error('Network response was not ok'); // 若不是200则抛出错误
+        }
     })
-    .catch((error) => {
-      console.error('Error:', error); // 输出错误信息
-    });
+        .then((data) => {
+            user.value = data
+        })
+        .catch((error) => {
+            console.error('Error:', error); // 输出错误信息
+        });
 }
 
-getMusic();
-getUserSys();
+// getMusic();
+// getUserSys();
 
 
-window.addEventListener('click',function(){
+window.addEventListener('click', function () {
     tools.value.show = false
 })
 </script>

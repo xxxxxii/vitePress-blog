@@ -1,14 +1,14 @@
 export const nav = [
     {
-        text: "🏡Blogs",
+        text: "🏡-文章",
         link: "/",
     },
     {
-        text: "🔖Tags",
+        text: "🔖-标签",
         link: "/tags",
     },
     {
-        text: "📃Archives",
+        text: "📃-归档",
         link: "/archives",
     },
     // {

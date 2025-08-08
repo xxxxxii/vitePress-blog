@@ -33,7 +33,7 @@ const data = computed(() => useYearSort(theme.value.posts));
 .main {
   margin: 0 auto;
   padding: 0.5rem 1.5rem 4rem;
-  max-width: 48rem;
+  max-width: 52rem;
 }
 .yearItem {
   border-bottom: 1px dashed #c7c7c7;

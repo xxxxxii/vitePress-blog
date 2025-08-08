@@ -30,6 +30,7 @@
     "gitalk": "^1.8.0",
     "katelog": "^0.0.6",
     "mark.js": "8.11.1",
-    "minisearch": "^6.3.0"
+    "minisearch": "^6.3.0",
+    "typescript": "^5.9.2"
   }
 }
